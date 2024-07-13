@@ -1,4 +1,4 @@
-Lo primero que haremos sera ir a la pagina de "TheHackerLabs" y concretamente a la siguiente direccion para descargar la maquina "Mobile Phone":
+Lo primero que haremos sera ir a la pagina de "TheHackersLabs" y concretamente a la siguiente direccion para descargar la maquina "Mobile Phone":
 
 https://thehackerslabs.com/wp-content/uploads/2024/06/The%20Hackers%20Labs%20-%20Mobile%20Phone.zip
 
