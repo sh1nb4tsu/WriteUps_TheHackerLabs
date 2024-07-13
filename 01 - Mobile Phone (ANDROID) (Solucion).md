@@ -1,5 +1,7 @@
 Lo primero que haremos sera ir a la pagina de "TheHackerLabs" y concretamente a la siguiente direccion para descargar la maquina "Mobile Phone":
+
 https://thehackerslabs.com/wp-content/uploads/2024/06/The%20Hackers%20Labs%20-%20Mobile%20Phone.zip
+
 Una vez descargada (es una ".ova"), y montada en nuestro programa de maquinas virtuales, empezaremos usando un ARP-SCAN (o NETDISCOVER) para hallar la IP de la maquina victima:
 ```
 arp-scan -I eth0 --localnet
@@ -14,6 +16,7 @@ descubriendo el siguiente puerto abierto:
 Discovered open port 5555/tcp on 192.168.1.145
 ```
 En Android, el puerto 5555 es el puerto por defecto de "adb" que es una herramienta que se utiliza para conectar nuestro movil con nuestro PC, de tal forma que podamos cambiarle la ROM, o actualizar aplicaciones, entre otras cosas.
+
 Como informacion adicional tenemos:
 ```
 PORT     STATE SERVICE  REASON         VERSION
@@ -22,7 +25,9 @@ MAC Address: 08:00:27:97:06:EB (Oracle VirtualBox virtual NIC)
 ```
 Bien, entonces vamos a ir a la pagina "HackTricks" para investigar un poco mas el servicio que corre por este puerto, y concretamente a esta direccion:
 https://book.hacktricks.xyz/v/es/network-services-pentesting/5555-android-debug-bridge
+
 Si leemos, vemos que tal y como hemos dicho al principio, este puerto hace referencia al Android Debug Bridge (adb), y que a dia de hoy, si se esta ejecutando este servicio y nos podemos conectar al dispositivo, es relativamente sencillo obtener una shell dentro del sistema.
+
 Asi que vamos a probar si funciona, empezando por escribir en la terminal el comando:
 ```
 adb connect 192.168.1.145   <=== Igual nos piden instalar "adb". OJO !!
@@ -117,4 +122,5 @@ storage
 
 root@x86_64:/storage/self/primary # 
 ```
-Y listo !! Ya tendriamos esta maquina Android hecha. Es muy sencillita y esta bien como primer contacto con Android.
+Y listo !! Ya tendriamos esta maquina Android hecha.
+Como se ha visto, es una maquina muy sencillita y esta bien como primer contacto con Android, ya que con tres simples comandos hemos conseguido tener acceso total a ella.
